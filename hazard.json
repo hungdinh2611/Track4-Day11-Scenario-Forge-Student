@@ -1,0 +1,44 @@
+{
+  "format": "avsim-studio/1",
+  "params": {
+    "cutT0": 5.0,
+    "cutDur": 4.0,
+    "cutV": 14.0,
+    "cutDs": -4.0,
+    "pedT0": 12.0,
+    "pedV": 1.35,
+    "busGo": 17.0,
+    "tgT": 1.2,
+    "mu": 0.8,
+    "cutGap": 12.0,
+    "pedGap": 4.5,
+    "pedLook": 1,
+    "cutBrake": 0.0,
+    "civil": true
+  },
+  "policy": {},
+  "hazards": [
+    {
+      "type": "bike",
+      "x": -15.0,
+      "lane": "E2",
+      "d": 0.4,
+      "v": 4.0,
+      "swerve": 3.8,
+      "swDur": 2.7,
+      "t0": 0.0,
+      "trig": 12.0
+    }
+  ],
+  "ego": "planner",
+  "world": "town",
+  "space": {
+    "h0_x": [-25.0, 20.0],
+    "h0_v": [2.0, 6.0],
+    "h0_trig": [8.0, 22.0],
+    "h0_swerve": [3.6, 4.0],
+    "h0_swDur": [2.7, 3.2]
+  },
+  "exposure": 0.001,
+  "why": "Giả thuyết kiểm thử: xe đạp chậm trong làn E2 lạng sang E1 để tránh một vật cản ở mép đường. Đây là tình huống giả lập, chưa phải phân phối được đo ngoài đường. space phủ vị trí ban đầu -25..20 m, tức trước ego ban đầu ở -40 m khoảng 15..60 m; tốc độ 2..6 m/s (7.2..21.6 km/h); bắt đầu lạng khi ego cách 8..22 m; lệch ngang 3.6..4.0 m qua ranh giới làn rộng 3.5 m trong 2.7..3.2 s. Gia tốc ngang lớn nhất là pi^2*4/(2*2.7^2)=2.708 m/s^2, dưới giới hạn 3 m/s^2 của studio và dưới mu*g ngay cả trên đường ướt. Các khoảng được đặt để phủ cả xe đạp gần/xa và lạng sớm/muộn, gồm các ca tránh được; lấy đều là giả định thí nghiệm. exposure=0.001 là giả định minh họa công khai: một đoạn đường tương tự mỗi chuyến, xác suất có xe đạp chậm 0.01 và xác suất lạng sang làn khi gặp xe đạp đó 0.10, nên 1*0.01*0.10=0.001/chuyến. Hai xác suất này chưa có dữ liệu thực nghiệm; phải thay bằng video ven đường và số chuyến qua đoạn đường trước khi dùng kết quả như tần suất thật. Với exposure 0.0001 hoặc 0.01, tần suất mỗi chuyến giảm hoặc tăng đúng 10 lần. Không coi tần suất minh họa là rủi ro thực tế."
+}

@@ -1,0 +1,121 @@
+{
+  "source": "Additional deterministic replays of saved pipeline scenarios; no new random draws.",
+  "mssv": "2A202602524",
+  "replay_example": {
+    "scenario": 7,
+    "contact": "rear",
+    "min_ttc_reactive": 2.405241443121069,
+    "human_events": [],
+    "reactive_events": [],
+    "replay_event": {
+      "t": 17.65,
+      "f": 353,
+      "a": "ego",
+      "b": "TG",
+      "kind": "contact",
+      "x": 111.62019348144531,
+      "z": 1.75,
+      "fake": true
+    }
+  },
+  "mode_examples": [
+    {
+      "mode": "bus_bypass",
+      "cloud_index": 9579,
+      "event": {
+        "t": 12.4,
+        "f": 248,
+        "a": "ego",
+        "b": "C2",
+        "kind": "contact",
+        "x": 92.74998474121094,
+        "z": 2.5458431243896484,
+        "fake": false
+      },
+      "params": {
+        "cutT0": 10.01747112172418,
+        "cutDur": 4.349179583831952,
+        "cutV": 13.989786820738031,
+        "cutDs": 7.347789617529305,
+        "pedT0": 10.671896584952464,
+        "pedV": 1.0644759621155613,
+        "busGo": 12.00475170397116,
+        "tgT": 0.8050859190245399,
+        "cutGap": 5.083498529092477,
+        "pedGap": 2.4641969025028376,
+        "mu": 0.5,
+        "pedLook": 0,
+        "cutBrake": 0.0,
+        "civil": true
+      },
+      "shot": "bus_bypass.png",
+      "story": "C2 tìm khe để lách xe buýt dừng trong E2, lấn sang hành lang ego; ego gặp C2 ở x=94.993 m, v=1.468 m/s. Sự kiện đầu tiên là ego–C2, đúng điều kiện x<112 và v<6 của bus_bypass. Các tác nhân chạy phản ứng, không phải phát lại log."
+    },
+    {
+      "mode": "crosswalk_block",
+      "cloud_index": 9519,
+      "event": {
+        "t": 20.65,
+        "f": 413,
+        "a": "ego",
+        "b": "P1",
+        "kind": "block",
+        "x": 121.05329895019531,
+        "z": 2.6125011444091797,
+        "fake": false
+      },
+      "params": {
+        "cutT0": 11.604640311111599,
+        "cutDur": 7.0877122152008685,
+        "cutV": 12.815928612432915,
+        "cutDs": 0.25376964034673755,
+        "pedT0": 14.272055772583906,
+        "pedV": 0.9015744244868591,
+        "busGo": 12.00036125253795,
+        "tgT": 0.665975012180414,
+        "cutGap": 7.727205943603987,
+        "pedGap": 2.3714429708732827,
+        "mu": 0.5,
+        "pedLook": 0,
+        "cutBrake": 0.0,
+        "civil": true
+      },
+      "shot": "crosswalk_block.png",
+      "story": "P1 chờ đến thời điểm/khe nhìn thấy đủ để qua đường; tham số pedLook=0, mu=0.5. Xe buýt che tầm nhìn từ phía vạch; ego phanh muộn và dừng thân xe trên lối P1. P1 dừng trước thân xe, không đi xuyên vào xe; đây là lỗi chặn lối khi kind=block, không tự diễn giải nó thành tiếp xúc vật lý."
+    }
+  ],
+  "fix_example": {
+    "cloud_index": 9579,
+    "params": {
+      "cutT0": 10.01747112172418,
+      "cutDur": 4.349179583831952,
+      "cutV": 13.989786820738031,
+      "cutDs": 7.347789617529305,
+      "pedT0": 10.671896584952464,
+      "pedV": 1.0644759621155613,
+      "busGo": 12.00475170397116,
+      "tgT": 0.8050859190245399,
+      "cutGap": 5.083498529092477,
+      "pedGap": 2.4641969025028376,
+      "mu": 0.5,
+      "pedLook": 0,
+      "cutBrake": 0.0,
+      "civil": true
+    },
+    "baseline_event": {
+      "t": 12.4,
+      "f": 248,
+      "a": "ego",
+      "b": "C2",
+      "kind": "contact",
+      "x": 92.74998474121094,
+      "z": 2.5458431243896484,
+      "fake": false
+    },
+    "chosen_events": [],
+    "chosen_policy": {
+      "cutinLat": 3.0
+    }
+  },
+  "policy_tradeoff": "Ví dụ ngay trên TRAIN (`fix.json: table`): cautionV=6.0 có fail=0.000641713467, cao hơn cautionV=6.5 với fail=0.000632435958. Giảm tốc gần vạch không bảo đảm giảm rủi ro: ego đến trạm muộn hơn, thay khe C2 chấp nhận và thời điểm P1 bước ra; phanh sớm cũng thay hành vi TG. Bảng xác nhận thứ tự thất bại thay đổi; đây là giải thích cơ chế có thể xảy ra, không suy ra nhân quả của một tương tác cụ thể chỉ từ tổng số."
+}

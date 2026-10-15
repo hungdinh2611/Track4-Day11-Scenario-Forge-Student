@@ -1,0 +1,27 @@
+{
+  "renderer": "Chrome headless CLI, 1600x1000; original viewer/index.html, app.js, sim-core.js; temporary HTML fixture only supplies saved parameters and fixes time/camera; original sources unchanged.",
+  "mode_examples": [
+    {
+      "file": "bus_bypass.png",
+      "source": "cloud.json row 9579",
+      "time": 12.4
+    },
+    {
+      "file": "crosswalk_block.png",
+      "source": "cloud.json row 9519",
+      "time": 20.65
+    }
+  ],
+  "hazard": {
+    "file": "hazard-studio.png",
+    "source": "hazard.json, exact scene",
+    "time": 3.45
+  },
+  "fix": {
+    "file": "fix-ghost.png",
+    "source": "cloud.json row 9579",
+    "time": 12.4,
+    "solid": "chosen",
+    "ghost": "baseline"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "mssv": "2A202602524",
+  "town": "B",
+  "full_pipeline": true,
+  "quick": false,
+  "original_suite": {
+    "command": ".venv/Scripts/python.exe -m pytest -q",
+    "passed": 41,
+    "note": "Previously completed in this workspace after the final TODO implementation; lab11 code unchanged since."
+  },
+  "protected_sources_unchanged": true,
+  "report_sections": 9,
+  "report_images_exist": true,
+  "screenshot_scene_parity": [
+    {
+      "scene": "bus_bypass",
+      "max_state_error_full_run": 0.0,
+      "max_position_error_full_run": 0.0,
+      "max_state_error_through_screenshot": 0.0,
+      "screenshot_time": 12.4,
+      "ego_state_error": 0.0,
+      "events_match": true,
+      "note": "Full trajectory matches within 0.002."
+    },
+    {
+      "scene": "crosswalk_block",
+      "max_state_error_full_run": 0.0,
+      "max_position_error_full_run": 0.0,
+      "max_state_error_through_screenshot": 0.0,
+      "screenshot_time": 20.65,
+      "ego_state_error": 0.0,
+      "events_match": true,
+      "note": "Full trajectory matches within 0.002."
+    },
+    {
+      "scene": "hazard-exact",
+      "max_state_error_full_run": 0.03680437058210373,
+      "max_position_error_full_run": 0.00133514404296875,
+      "max_state_error_through_screenshot": 0.0,
+      "screenshot_time": 3.45,
+      "ego_state_error": 0.0,
+      "events_match": true,
+      "note": "After the exact hazard collision at 3.45 s, H0 acceleration differs by 0.03680437 m/s^2 at 22.7 s in the original supplied cores; positions differ by at most 0.001335144 m. Screenshot prefix and all event frames match."
+    },
+    {
+      "scene": "fix-ghost chosen",
+      "max_state_error_full_run": 0.0,
+      "max_position_error_full_run": 0.0,
+      "max_state_error_through_screenshot": 0.0,
+      "screenshot_time": 12.4,
+      "ego_state_error": 0.0,
+      "events_match": true,
+      "note": "Full trajectory matches within 0.002."
+    }
+  ],
+  "lab11_sha256": {
+    "lab11/__init__.py": "aafef1754e35ba1e73bfc32f743d409954f038738dac8bff2daa66fccac09adc",
+    "lab11/estimate.py": "4f921918e1d16d197bae3603deb7eac7a4e643f52a6b8a7cc4c34c2c9548b042",
+    "lab11/feasible.py": "ff1cca5eb29d6f995fc9ba07fed7efe1509aa397e8822c5f487a9455ac9e3b75",
+    "lab11/metrics.py": "1abda4b5db8608ad9c0e7398e022bef82e7b6cf2e748051f4f374ff33369607c",
+    "lab11/modes.py": "989548439698ace543002c031c6c5f122d79d8069deacd821310863388bfc1dd",
+    "lab11/policy.py": "393f9275393b6fff97882f51b9f7aa40d727e7fd2e3e2b97dfafebdc1894933b",
+    "lab11/search.py": "ede8faccbef0c9135e26ffeb2e9663dac3ed0845171b364b6f4b179e9a588114"
+  },
+  "runtime": {
+    "python": "3.10.4",
+    "numpy": "2.2.6",
+    "pytest": "9.1.1"
+  }
+}
